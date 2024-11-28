@@ -13,8 +13,8 @@ public class Library {
     }
 
     public boolean hasAuthor(String nif) {
-        for (var book: books) {
-            if(book.hasAuthor(nif)) {
+        for (var book : books) {
+            if (book.hasAuthor(nif)) {
                 return true;
             }
         }
@@ -22,12 +22,22 @@ public class Library {
     }
 
     public boolean hasBook(String isbn) {
-        for (var book: books) {
-            if(book.getIsbn().equals(isbn)) {
+        for (var book : books) {
+            if (book.getIsbn().equals(isbn)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public int countAuthorBooks(String authorNif) {
+        int count = 0;
+        for (var book : books) {
+            if (book.hasAuthor(authorNif)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public String getName() {
