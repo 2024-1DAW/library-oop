@@ -16,6 +16,15 @@ public class Book {
         this.authors = authors;
     }
 
+    public boolean hasAuthor(String nif) {
+        for (var author: authors) {
+            if(author.getNif().equals(nif)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public String getIsbn() {
         return isbn;
     }
