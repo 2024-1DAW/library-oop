@@ -40,6 +40,26 @@ public class Library {
         return count;
     }
 
+    public int countYearBooks(int year) {
+        int count = 0;
+        for (var book : books) {
+            if (book.getYear() == year) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public Book findBook(String isbn) {
+        for (var book : books) {
+            if (book.getIsbn().equals(isbn)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+
     public String getName() {
         return name;
     }
